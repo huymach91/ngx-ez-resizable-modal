@@ -2,6 +2,9 @@ export function draggable(element: HTMLElement) {
   var wrapper = document.body;
   var shiftX, shiftY;
 
+  wrapper.style.setProperty('height', '100vh');
+  wrapper.style.setProperty('width', '100vw');
+
   element.addEventListener('mousedown', function (event) {
     shiftX = event.clientX - element.getBoundingClientRect().left;
     shiftY = event.clientY - element.getBoundingClientRect().top;
