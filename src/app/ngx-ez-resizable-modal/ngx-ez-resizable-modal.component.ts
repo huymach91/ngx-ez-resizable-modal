@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
-import { draggable } from './draggable';
+import { Draggable } from './draggable';
 
 @Component({
   selector: 'ngx-ez-resizable-modal',
@@ -25,6 +25,6 @@ export class NgxEzResizableModalComponent implements AfterViewInit {
     this.bodyElement = this.bodyRef.nativeElement as HTMLDivElement;
     this.footerElement = this.footerRef.nativeElement as HTMLDivElement;
 
-    draggable(this.contentElement);
+    const draggableElement = new Draggable(this.contentElement);
   }
 }

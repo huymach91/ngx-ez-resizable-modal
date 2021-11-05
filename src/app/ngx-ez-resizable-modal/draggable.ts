@@ -71,6 +71,8 @@ export class Draggable {
     this.wrapperElement = document.body;
     this.wrapperElement.style.setProperty('height', '100vh');
     this.wrapperElement.style.setProperty('width', '100vw');
+
+    this.startDrag();
   }
 
   private startDrag() {
@@ -89,7 +91,14 @@ export class Draggable {
     };
   }
 
-  private moveAt() {}
+  private moveAt(event: MouseEvent) {
+    const position = this.newPosition(event.pageX, event.pageY) as {
+      left: number;
+      top: number;
+    };
+    this.element.style.left = position.left + 'px';
+    this.element.style.top = position.top + 'px';
+  }
 
   private newPosition(pageX: number, pageY: number) {
     var wrapperRect = this.wrapperElement.getBoundingClientRect();
