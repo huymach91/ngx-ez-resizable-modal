@@ -1,4 +1,4 @@
-function draggable(element) {
+export function draggable(element: HTMLElement) {
   var wrapper = element.parentElement;
   var shiftX, shiftY;
 

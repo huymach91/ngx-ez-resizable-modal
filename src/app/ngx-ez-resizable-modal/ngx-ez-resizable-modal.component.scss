@@ -1,12 +1,13 @@
 .ngx-ez-resizable-modal-content {
   min-width: 250px;
-  width: 70%;
   min-height: 250px;
   border: 1px solid rgb(175, 173, 173);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin: auto;
+  position: fixed;
+  left: 10%;
 }
 
 .ngx-ez-resizable-modal-header,
@@ -27,4 +28,12 @@
 
 .ngx-ez-resizable-modal-footer {
   height: 100%;
+}
+
+.ngx-ez-resizable-modal-size-sm {
+  width: 60%;
+}
+
+.ngx-ez-resizable-modal-size-sm {
+  width: 80%;
 }
