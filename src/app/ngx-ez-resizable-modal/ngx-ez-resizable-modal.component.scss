@@ -1,0 +1,24 @@
+.ngx-ez-resizable-modal-content {
+  min-width: 250px;
+  min-height: 250px;
+  border: 1px solid rgb(175, 173, 173);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ngx-ez-resizable-modal-header {
+  min-height: 25px;
+  border-bottom: 1px solid rgb(175, 173, 173);
+  padding: 5px;
+}
+
+.ngx-ez-resizable-modal-footer {
+  height: 100%;
+}
+
+.ngx-ez-resizable-modal-footer {
+  min-height: 25px;
+  border-top: 1px solid rgb(175, 173, 173);
+  padding: 5px;
+}
