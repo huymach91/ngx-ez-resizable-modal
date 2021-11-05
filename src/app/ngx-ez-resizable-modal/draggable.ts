@@ -1,5 +1,5 @@
 export function draggable(element: HTMLElement) {
-  var wrapper = element.parentElement;
+  var wrapper = document.body;
   var shiftX, shiftY;
 
   element.addEventListener('mousedown', function (event) {
