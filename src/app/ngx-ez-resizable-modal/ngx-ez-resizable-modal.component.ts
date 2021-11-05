@@ -25,6 +25,9 @@ export class NgxEzResizableModalComponent implements AfterViewInit {
     this.bodyElement = this.bodyRef.nativeElement as HTMLDivElement;
     this.footerElement = this.footerRef.nativeElement as HTMLDivElement;
 
-    const draggableElement = new Draggable(this.contentElement);
+    const draggableElement = new Draggable(
+      this.contentElement,
+      this.headerElement
+    );
   }
 }

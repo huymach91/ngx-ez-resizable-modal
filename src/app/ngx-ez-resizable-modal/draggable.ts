@@ -6,7 +6,10 @@ export class Draggable {
   private moveAtRef: any;
   private stopRef: any;
 
-  constructor(private element: HTMLElement, private target?: HTMLElement) {
+  constructor(
+    private element: HTMLElement,
+    private handlerElement?: HTMLElement
+  ) {
     this.wrapperElement = document.body;
     this.wrapperElement.style.setProperty('height', '100vh');
     this.wrapperElement.style.setProperty('width', '100vw');
@@ -20,6 +23,8 @@ export class Draggable {
     this.wrapperElement.addEventListener('mousedown', (event: MouseEvent) => {
       this.shiftX = event.clientX - this.element.getBoundingClientRect().left;
       this.shiftY = event.clientY - this.element.getBoundingClientRect().top;
+
+      if (!this.isHandler(event)) return;
 
       document.addEventListener('mouseup', this.stopRef);
       document.addEventListener('mousemove', this.moveAtRef);
@@ -81,5 +86,10 @@ export class Draggable {
   private stop() {
     document.removeEventListener('mouseup', this.stopRef);
     document.removeEventListener('mousemove', this.moveAtRef);
+  }
+
+  private isHandler(event: MouseEvent) {
+    if (!this.handlerElement) return;
+    return this.handlerElement.contains(event.target as HTMLElement);
   }
 }
