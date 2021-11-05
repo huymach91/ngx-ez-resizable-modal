@@ -1,7 +1,11 @@
 {
-  "name": "angular",
-  "version": "0.0.0",
+  "name": "ngx-ez-resizable-modal",
+  "version": "1.0.0",
   "private": true,
+  "author": {
+    "email": "huy.mach.webdev@gmail.com",
+    "name": "Huy Mach"
+  },
   "dependencies": {
     "@angular/animations": "^12.2.5",
     "@angular/common": "^12.2.5",
