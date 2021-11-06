@@ -1,5 +1,3 @@
-import { Optional } from '@angular/core';
-
 export interface IDraggableOptional {
   inViewPort: boolean;
   parentElement?: HTMLElement;

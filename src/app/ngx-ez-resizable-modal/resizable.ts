@@ -209,6 +209,7 @@ export class ResizableDirective implements AfterViewInit {
     for (const i in this.resizers) {
       const resizer = this.resizers[i] as HTMLDivElement;
       resizer.addEventListener('mousedown', (event: MouseEvent) => {
+        event.stopPropagation();
         this.isMouseDown = true;
         this.currentResizer = resizer;
         this.currentWidth = this.currentElement.offsetWidth;
