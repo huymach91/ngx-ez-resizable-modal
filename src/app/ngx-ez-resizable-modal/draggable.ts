@@ -50,7 +50,6 @@ export class Draggable {
   }
 
   private moveAt(event: MouseEvent) {
-    console.log('move');
     const position = this.newPosition(event.pageX, event.pageY) as {
       left: number;
       top: number;
