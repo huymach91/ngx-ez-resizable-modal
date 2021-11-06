@@ -40,7 +40,7 @@ export class ResizableDirective implements AfterViewInit {
     this.currentElement = element;
     this.currentElement.style.setProperty('position', 'fixed');
 
-    const thick = '4px';
+    const thick = '2px';
 
     this.resizers.east = document.createElement('div');
     this.resizers.east.classList.add('east');
