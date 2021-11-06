@@ -34,6 +34,7 @@ export class Draggable {
     this.stopRef = this.stop.bind(this);
     this.moveAtRef = this.moveAt.bind(this);
     this.wrapperElement.addEventListener('mousedown', (event: MouseEvent) => {
+      event.stopPropagation();
       this.shiftX = event.clientX - this.element.getBoundingClientRect().left;
       this.shiftY = event.clientY - this.element.getBoundingClientRect().top;
 
@@ -49,6 +50,7 @@ export class Draggable {
   }
 
   private moveAt(event: MouseEvent) {
+    console.log('move');
     const position = this.newPosition(event.pageX, event.pageY) as {
       left: number;
       top: number;
