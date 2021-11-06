@@ -1,11 +1,13 @@
 <div
-  class="ngx-ez-resizable-modal-content ngx-ez-resizable-modal-size-sm"
+  class="ngx-ez-resizable-modal-content ngx-ez-resizable-modal-size-sm {{
+    modalConfig?.modalClass
+  }}"
   #contentRef
   resizable
   [style]="{ background: 'transparent', thick: '4px' }"
 >
   <div #headerRef class="ngx-ez-resizable-modal-header">
-    <div class="modal-title">
+    <div class="modal-title {{ modalConfig?.headerClass }}">
       <span class="modal-title-left">
         <ng-content select="[title]"></ng-content>
       </span>
@@ -17,10 +19,16 @@
       </span>
     </div>
   </div>
-  <div #bodyRef class="ngx-ez-resizable-modal-body">
+  <div
+    #bodyRef
+    class="ngx-ez-resizable-modal-body {{ modalConfig?.bodyClass }}"
+  >
     <ng-content select="[body]"></ng-content>
   </div>
-  <div #footerRef class="ngx-ez-resizable-modal-footer">
+  <div
+    #footerRef
+    class="ngx-ez-resizable-modal-footer {{ modalConfig?.footerClass }}"
+  >
     <ng-content select="[footer]"></ng-content>
   </div>
 </div>
