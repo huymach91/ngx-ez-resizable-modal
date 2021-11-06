@@ -14,6 +14,8 @@ import { IResizableModalConfig } from './ngx-ez-resizable-modal.interface';
   styleUrls: ['./ngx-ez-resizable-modal.component.scss'],
 })
 export class NgxEzResizableModalComponent implements AfterViewInit {
+  @Input() modalConfig: IResizableModalConfig = {};
+
   @ViewChild('contentRef') contentRef: ElementRef;
   @ViewChild('headerRef') headerRef: ElementRef;
   @ViewChild('bodyRef') bodyRef: ElementRef;
