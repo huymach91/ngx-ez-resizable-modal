@@ -6,8 +6,11 @@
   resizable
   [style]="{ background: 'transparent', thick: '4px' }"
 >
-  <div #headerRef class="ngx-ez-resizable-modal-header">
-    <div class="modal-title {{ modalConfig?.headerClass }}">
+  <div
+    #headerRef
+    class="ngx-ez-resizable-modal-header {{ modalConfig?.headerClass }}"
+  >
+    <div class="modal-title">
       <span class="modal-title-left">
         <ng-content select="[title]"></ng-content>
       </span>

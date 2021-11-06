@@ -17,3 +17,7 @@
 .btn-default {
   background-color: whitesmoke;
 }
+
+.custom-header {
+  background-color: orange !important;
+}
