@@ -9,6 +9,10 @@
   position: fixed;
   left: 10%;
   box-shadow: 0 0 10px rgb(145, 143, 143);
+  -webkit-box-shadow: 0 0 10px rgb(145, 143, 143);
+  -moz-box-shadow: 0 0 10px rgb(145, 143, 143);
+  -ms-box-shadow: 0 0 10px rgb(145, 143, 143);
+  -o-box-shadow: 0 0 10px rgb(145, 143, 143);
 }
 
 .ngx-ez-resizable-modal-header,
