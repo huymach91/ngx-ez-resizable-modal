@@ -18,6 +18,6 @@
   background-color: whitesmoke;
 }
 
-.custom-header {
+.custom-header::ng-deep {
   background-color: orange !important;
 }
