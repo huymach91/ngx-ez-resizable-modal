@@ -224,6 +224,7 @@ export class ResizableDirective implements AfterViewInit {
 
   private setStyle(resizer: HTMLDivElement) {
     resizer.style.setProperty('position', 'absolute');
+    resizer.style.setProperty('user-select', 'none');
     resizer.style.setProperty('background-color', this.style.background);
   }
 }
