@@ -1,5 +1,12 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  Input,
+  ViewChild,
+} from '@angular/core';
 import { Draggable } from './draggable';
+import { IResizableModalConfig } from './ngx-ez-resizable-modal.interface';
 
 @Component({
   selector: 'ngx-ez-resizable-modal',
@@ -7,6 +14,10 @@ import { Draggable } from './draggable';
   styleUrls: ['./ngx-ez-resizable-modal.component.scss'],
 })
 export class NgxEzResizableModalComponent implements AfterViewInit {
+  @Input() modalConfig: IResizableModalConfig = {
+    enableHandler: false
+  };
+
   @ViewChild('contentRef') contentRef: ElementRef;
   @ViewChild('headerRef') headerRef: ElementRef;
   @ViewChild('bodyRef') bodyRef: ElementRef;
@@ -31,7 +42,7 @@ export class NgxEzResizableModalComponent implements AfterViewInit {
 
     const draggableElement = new Draggable(
       this.contentElement,
-      this.headerElement
+      this.modalConfig.enableHandler ? this.handlerElement : this.headerElement
     );
   }
 }
