@@ -1,3 +1,7 @@
+export interface IDraggableOptional {
+  inViewPort: boolean;
+}
+
 export class Draggable {
   private wrapperElement: HTMLElement;
   private shiftX: number;
@@ -8,7 +12,8 @@ export class Draggable {
 
   constructor(
     private element: HTMLElement,
-    private handlerElement?: HTMLElement
+    private handlerElement?: HTMLElement,
+    options?: IDraggableOptional
   ) {
     this.wrapperElement = document.body;
     this.wrapperElement.style.setProperty('height', '100vh');
