@@ -43,4 +43,9 @@ export class NgxEzResizableModalComponent implements AfterViewInit {
       enableHandler ? this.handlerElement : this.headerElement
     );
   }
+
+  onClose(event: any) {
+    event.stopPropagation();
+    this.contentElement.style.setProperty('display', 'none');
+  }
 }

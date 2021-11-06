@@ -1,0 +1,19 @@
+.element-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 5px;
+}
+
+.btn {
+  padding: 5px 15px;
+  border: 1px solid rgb(209, 201, 201);
+}
+
+.btn-success {
+  background-color: rgb(64, 233, 64);
+}
+
+.btn-default {
+  background-color: whitesmoke;
+}

@@ -43,8 +43,24 @@
   width: 80%;
 }
 
-.modal-title {
+.modal-title,
+.modal-title-right {
   display: flex;
   align-items: center;
+  align-items: center;
   justify-content: space-between;
+  column-gap: 5px;
+  height: 100%;
+}
+
+.close-icon,
+.move-icon {
+  font-size: 16px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.modal-title-left {
+  font-size: 20px;
+  width: 100%;
 }
