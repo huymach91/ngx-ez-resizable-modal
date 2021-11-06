@@ -3,12 +3,18 @@ import {
   Directive,
   ElementRef,
   HostListener,
+  Input,
 } from '@angular/core';
 
 @Directive({
   selector: '[resizable]',
 })
 export class ResizableDirective implements AfterViewInit {
+  @Input() style = {
+    thick: '2px',
+    background: '#3794ff',
+  };
+
   private isMouseDown: boolean;
 
   private resizers: { [T: string]: HTMLDivElement } = {};
@@ -40,7 +46,7 @@ export class ResizableDirective implements AfterViewInit {
     this.currentElement = element;
     this.currentElement.style.setProperty('position', 'fixed');
 
-    const thick = '2px';
+    const thick = this.style.thick;
 
     this.resizers.east = document.createElement('div');
     this.resizers.east.classList.add('east');
@@ -217,6 +223,6 @@ export class ResizableDirective implements AfterViewInit {
 
   private setStyle(resizer: HTMLDivElement) {
     resizer.style.setProperty('position', 'absolute');
-    resizer.style.setProperty('background-color', '#3794ff');
+    resizer.style.setProperty('background-color', this.style.background);
   }
 }
