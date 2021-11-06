@@ -1,5 +1,8 @@
+import { Optional } from '@angular/core';
+
 export interface IDraggableOptional {
   inViewPort: boolean;
+  parentElement?: HTMLElement;
 }
 
 export class Draggable {
@@ -13,11 +16,18 @@ export class Draggable {
   constructor(
     private element: HTMLElement,
     private handlerElement?: HTMLElement,
-    options?: IDraggableOptional
+    optional: IDraggableOptional = {
+      inViewPort: true,
+    }
   ) {
-    this.wrapperElement = document.body;
-    this.wrapperElement.style.setProperty('height', '100vh');
-    this.wrapperElement.style.setProperty('width', '100vw');
+    this.wrapperElement = optional.inViewPort
+      ? document.body
+      : optional.parentElement;
+
+    if (optional.inViewPort) {
+      this.wrapperElement.style.setProperty('height', '100vh');
+      this.wrapperElement.style.setProperty('width', '100vw');
+    }
 
     this.startDrag();
   }
