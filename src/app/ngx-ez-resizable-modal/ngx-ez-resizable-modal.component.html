@@ -2,7 +2,14 @@
   class="ngx-ez-resizable-modal-content ngx-ez-resizable-modal-size-sm"
   #contentRef
 >
-  <div #headerRef class="ngx-ez-resizable-modal-header">Header</div>
+  <div #headerRef class="ngx-ez-resizable-modal-header">
+    <div class="modal-title">
+      <span>Header</span>
+      <span>
+        <span #handlerRef><i>handler</i></span>
+      </span>
+    </div>
+  </div>
   <div #bodyRef class="ngx-ez-resizable-modal-body"></div>
   <div #footerRef class="ngx-ez-resizable-modal-footer"></div>
 </div>

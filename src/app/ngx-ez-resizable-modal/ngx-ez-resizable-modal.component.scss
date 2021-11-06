@@ -37,3 +37,9 @@
 .ngx-ez-resizable-modal-size-sm {
   width: 80%;
 }
+
+.modal-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

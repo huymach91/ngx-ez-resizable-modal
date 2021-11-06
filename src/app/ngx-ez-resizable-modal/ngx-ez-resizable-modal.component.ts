@@ -12,10 +12,13 @@ export class NgxEzResizableModalComponent implements AfterViewInit {
   @ViewChild('bodyRef') bodyRef: ElementRef;
   @ViewChild('footerRef') footerRef: ElementRef;
 
+  @ViewChild('handlerRef') handlerRef: ElementRef;
+
   private contentElement: any;
   private headerElement: any;
   private bodyElement: any;
   private footerElement: any;
+  private handlerElement: any;
 
   constructor() {}
 
@@ -24,10 +27,11 @@ export class NgxEzResizableModalComponent implements AfterViewInit {
     this.headerElement = this.headerRef.nativeElement as HTMLDivElement;
     this.bodyElement = this.bodyRef.nativeElement as HTMLDivElement;
     this.footerElement = this.footerRef.nativeElement as HTMLDivElement;
+    this.handlerElement = this.handlerRef.nativeElement as HTMLDivElement;
 
     const draggableElement = new Draggable(
       this.contentElement,
-      this.headerElement
+      this.handlerElement
     );
   }
 }
