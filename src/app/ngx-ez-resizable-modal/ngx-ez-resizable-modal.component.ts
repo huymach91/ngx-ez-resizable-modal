@@ -14,10 +14,6 @@ import { IResizableModalConfig } from './ngx-ez-resizable-modal.interface';
   styleUrls: ['./ngx-ez-resizable-modal.component.scss'],
 })
 export class NgxEzResizableModalComponent implements AfterViewInit {
-  @Input() modalConfig: IResizableModalConfig = {
-    enableHandler: false
-  };
-
   @ViewChild('contentRef') contentRef: ElementRef;
   @ViewChild('headerRef') headerRef: ElementRef;
   @ViewChild('bodyRef') bodyRef: ElementRef;
@@ -40,9 +36,11 @@ export class NgxEzResizableModalComponent implements AfterViewInit {
     this.footerElement = this.footerRef.nativeElement as HTMLDivElement;
     this.handlerElement = this.handlerRef.nativeElement as HTMLDivElement;
 
+    const enableHandler = !!this.handlerElement.children.length;
+
     const draggableElement = new Draggable(
       this.contentElement,
-      this.modalConfig.enableHandler ? this.handlerElement : this.headerElement
+      enableHandler ? this.handlerElement : this.headerElement
     );
   }
 }

@@ -1,3 +1,1 @@
-export interface IResizableModalConfig {
-  enableHandler?: boolean;
-}
+export interface IResizableModalConfig {}
