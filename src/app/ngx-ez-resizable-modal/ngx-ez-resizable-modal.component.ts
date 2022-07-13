@@ -25,25 +25,23 @@ export class NgxEzResizableModalComponent implements AfterViewInit {
 
   private contentElement: any;
   private headerElement: any;
-  private bodyElement: any;
-  private footerElement: any;
   private handlerElement: any;
 
   constructor() {}
 
   ngAfterViewInit() {
-    this.contentElement = this.contentRef.nativeElement as HTMLDivElement;
-    this.headerElement = this.headerRef.nativeElement as HTMLDivElement;
-    this.bodyElement = this.bodyRef.nativeElement as HTMLDivElement;
-    this.footerElement = this.footerRef.nativeElement as HTMLDivElement;
-    this.handlerElement = this.handlerRef.nativeElement as HTMLDivElement;
+    if (this.modalConfig.draggable) {
+      this.contentElement = this.contentRef.nativeElement as HTMLDivElement;
+      this.headerElement = this.headerRef.nativeElement as HTMLDivElement;
+      this.handlerElement = this.handlerRef.nativeElement as HTMLDivElement;
 
-    const enableHandler = !!this.handlerElement.children.length;
+      const enableHandler = !!this.handlerElement.children.length;
 
-    const draggableElement = new Draggable(
-      this.contentElement,
-      enableHandler ? this.handlerElement : this.headerElement
-    );
+      new Draggable(
+        this.contentElement,
+        enableHandler ? this.handlerElement : this.headerElement
+      );
+    }
   }
 
   onClose(event: any) {

@@ -14,6 +14,7 @@ export class ResizableDirective implements AfterViewInit {
     thick: '2px',
     background: '#3794ff',
   };
+  @Input('disabled') disabled: boolean = false;
 
   private isMouseDown: boolean;
 
@@ -33,6 +34,8 @@ export class ResizableDirective implements AfterViewInit {
   constructor(private element: ElementRef) {}
 
   ngAfterViewInit() {
+    if (this.disabled) return;
+
     const element = this.element.nativeElement as HTMLDivElement;
 
     const width = element.offsetWidth;

@@ -1,4 +1,15 @@
+.ngx-ez-resizable-modal-backdrop {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(44, 42, 42);
+  z-index: 3;
+  opacity: 0.5;
+}
+
 .ngx-ez-resizable-modal-content {
+  z-index: 5;
+  top: 80px;
   min-width: 150px;
   min-height: 150px;
   border: 1px solid rgb(175, 173, 173);
@@ -8,11 +19,12 @@
   margin: auto;
   position: fixed;
   left: 10%;
-  box-shadow: 0 0 10px rgb(145, 143, 143);
-  -webkit-box-shadow: 0 0 10px rgb(145, 143, 143);
-  -moz-box-shadow: 0 0 10px rgb(145, 143, 143);
-  -ms-box-shadow: 0 0 10px rgb(145, 143, 143);
-  -o-box-shadow: 0 0 10px rgb(145, 143, 143);
+  box-shadow: 0 0 10px rgb(180, 175, 175);
+  -webkit-box-shadow: 0 0 10px rgb(180, 175, 175);
+  -moz-box-shadow: 0 0 10px rgb(180, 175, 175);
+  -ms-box-shadow: 0 0 10px rgb(180, 175, 175);
+  -o-box-shadow: 0 0 10px rgb(180, 175, 175);
+  background-color: white;
 }
 
 .ngx-ez-resizable-modal-header,

@@ -1,9 +1,15 @@
 <div
+  class="ngx-ez-resizable-modal-backdrop"
+  *ngIf="modalConfig?.backdrop"
+></div>
+
+<div
   class="ngx-ez-resizable-modal-content ngx-ez-resizable-modal-size-sm {{
     modalConfig?.modalClass
   }}"
   #contentRef
   resizable
+  [disabled]="!modalConfig?.enableResize"
   [style]="{ background: 'transparent', thick: '4px' }"
 >
   <div
