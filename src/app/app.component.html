@@ -1,5 +1,10 @@
 <ngx-ez-resizable-modal
-  [modalConfig]="{ headerClass: 'bg-orange', backdrop: true }"
+  [modalConfig]="{
+    headerClass: 'bg-orange',
+    backdrop: true,
+    enableResize: true,
+    draggable: true
+  }"
 >
   <ng-container title> Collection </ng-container>
   <ng-container footer>
